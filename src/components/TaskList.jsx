@@ -20,7 +20,7 @@ function TaskList({ user, setUser }) {
 
   const fetchTasks = async () => {
     try {
-      const response = await fetch('https://actyme-assesment-wuke.vercel.app//api/tasks');
+      const response = await fetch('https://actyme-assesment-backe.onrender.com/api/tasks');
       const data = await response.json();
       setTasks(data);
     } catch (err) {
@@ -34,7 +34,7 @@ function TaskList({ user, setUser }) {
     setCompletingTask(taskId);
     
     try {
-      const response = await fetch('https://actyme-assesment-wuke.vercel.app//api/tasks/complete', {
+      const response = await fetch('https://actyme-assesment-backe.onrender.com/api/tasks/complete', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ function TaskList({ user, setUser }) {
     setDeletingTask(taskToDelete.id);
     
     try {
-      const response = await fetch(`https://actyme-assesment-wuke.vercel.app//api/tasks/delete/${taskToDelete.id}`, {
+      const response = await fetch(`https://actyme-assesment-backe.onrender.com/api/tasks/delete/${taskToDelete.id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -106,7 +106,7 @@ function TaskList({ user, setUser }) {
     if (!newTask.title || !newTask.points) return;
     
     try {
-      const response = await fetch('https://actyme-assesment-wuke.vercel.app//api/tasks/createTask', {
+      const response = await fetch('https://actyme-assesment-backe.onrender.com/api/tasks/createTask', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -412,4 +412,5 @@ function TaskList({ user, setUser }) {
 
 
 export default TaskList;
+
 
