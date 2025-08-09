@@ -28,7 +28,7 @@ function App() {
   const verifyToken = async () => {
     try {
       // You'll need to create this endpoint in your backend
-      const res = await axios.get('http://localhost:5000/api/auth/verify');
+      const res = await axios.get('https://actyme-assesment-backk.onrender.com');
       setUser(res.data.user);
     } catch (err) {
       console.error('Token verification failed:', err);
