@@ -17,7 +17,7 @@ const Login = ({ setUser }) => {
     setError('');
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', {
+      const res = await axios.post('https://actyme-assesment-backk.onrender.com/api/auth/login', {
         email,
         password
       });
@@ -170,5 +170,6 @@ const Login = ({ setUser }) => {
     </div>
   );
 };
+
 
 export default Login;
