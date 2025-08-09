@@ -8,7 +8,7 @@ function PrizeDraw({ user }) {
   useEffect(() => {
     const fetchDraws = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/prizeDraw');
+        const res = await axios.get('https://actyme-assesment-backk.onrender.com/api/prizeDraw');
         setDraws(res.data);
       } catch (err) {
         console.error(err);
@@ -19,7 +19,7 @@ function PrizeDraw({ user }) {
 
   const handleEnter = async (drawId) => {
     try {
-      const res = await axios.post('http://localhost:5000/api/prizeDraw/enter', { drawId }, {
+      const res = await axios.post('https://actyme-assesment-backk.onrender.com/api/prizeDraw/enter', { drawId }, {
         headers: { 'x-auth-token': localStorage.getItem('token') }
       });
       alert(res.data.msg);
@@ -32,7 +32,7 @@ function PrizeDraw({ user }) {
   const handleCreateDraw = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/prizeDraw/create', newDraw, {
+      const res = await axios.post('https://actyme-assesment-backk.onrender.com/api/prizeDraw/create', newDraw, {
         headers: { 'x-auth-token': localStorage.getItem('token') }
       });
       setDraws([...draws, res.data.draw]);
@@ -64,5 +64,6 @@ function PrizeDraw({ user }) {
     </div>
   );
 }
+
 
 export default PrizeDraw;
