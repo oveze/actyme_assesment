@@ -20,7 +20,7 @@ function TaskList({ user, setUser }) {
 
   const fetchTasks = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/tasks');
+      const response = await fetch('https://actyme-assesment-backk.onrender.com/api/tasks');
       const data = await response.json();
       setTasks(data);
     } catch (err) {
@@ -34,7 +34,7 @@ function TaskList({ user, setUser }) {
     setCompletingTask(taskId);
     
     try {
-      const response = await fetch('http://localhost:5000/api/tasks/complete', {
+      const response = await fetch('https://actyme-assesment-backk.onrender.com/api/tasks/complete', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ function TaskList({ user, setUser }) {
     setDeletingTask(taskToDelete.id);
     
     try {
-      const response = await fetch(`http://localhost:5000/api/tasks/delete/${taskToDelete.id}`, {
+      const response = await fetch(`https://actyme-assesment-backk.onrender.com/api/tasks/delete/${taskToDelete.id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -106,7 +106,7 @@ function TaskList({ user, setUser }) {
     if (!newTask.title || !newTask.points) return;
     
     try {
-      const response = await fetch('http://localhost:5000/api/tasks/createTask', {
+      const response = await fetch('https://actyme-assesment-backk.onrender.com/api/tasks/createTask', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -409,5 +409,6 @@ function TaskList({ user, setUser }) {
     </div>
   );
 }
+
 
 export default TaskList;
