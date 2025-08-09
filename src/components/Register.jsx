@@ -18,7 +18,7 @@ const Register = ({ setUser }) => {
     setError('');
 
     try {
-      const res = await axios.post('https://actyme-assesment-backk.onrender.com/api/auth/register', { 
+      const res = await axios.post('https://actyme-assesment-wuke.vercel.app//api/auth/register', { 
         username, 
         email, 
         password 
@@ -234,3 +234,4 @@ const Register = ({ setUser }) => {
 
 
 export default Register;
+
